@@ -1,4 +1,15 @@
+require('bootstrap');
+
 $(document).ready(function() {
+  
+  function createLoremIpsum(numWords = 50) {
+    const loremIpsum = "Lorem ipsum dolor amet tousled brooklyn meditation, polaroid offal kale chips raw denim tumblr succulents jianbing listicle. Man braid godard VHS freegan bespoke fixie XOXO ramps lo-fi edison bulb prism gochujang photo booth. Messenger bag bicycle rights trust fund franzen street art mixtape helvetica, sriracha dreamcatcher live-edge microdosing. Whatever cliche neutra iceland chambray, beard narwhal pop-up health goth readymade palo santo forage live-edge 3 wolf moon echo park edison bulb, viral iceland bicycle rights post-ironic celiac typewriter kinfolk mumblecore tilde palo santo. Dreamcatcher cred cliche, keffiyeh intelligentsia forage vice locavore aesthetic yr. Vexillologist shabby chic fixie, air plant helvetica health goth kickstarter four loko jean shorts tote bag green juice street art beard farm-to-table. Enamel pin jianbing photo booth, YOLO pour-over bushwick next level fingerstache vice retro disrupt cloud bread. Gastropub umami distillery chia food truck adaptogen. Forage hexagon helvetica kogi squid. Crucifix health goth bespoke typewriter fam hexagon helvetica, vice dreamcatcher chillwave tumeric. Keffiyeh aesthetic XOXO venmo live-edge kale chips mlkshk wolf williamsburg hella yr locavore. Tumblr unicorn chillwave, edison bulb occupy offal sartorial gastropub kickstarter. Bitters swag chartreuse single-origin coffee PBR&B post-ironic migas activated charcoal before they sold out iPhone seitan lumbersexual tofu tumeric selvage. Shoreditch hashtag literally, af intelligentsia crucifix sustainable +1 chambray adaptogen. Crucifix retro fixie knausgaard. Photo booth asymmetrical seitan, pug marfa tattooed roof party tacos gochujang woke kale chips vice organic. Street art mumblecore trust fund, normcore single-origin coffee meggings neutra tacos fam. Woke chia asymmetrical try-hard cloud bread hexagon leggings kogi taiyaki. Seitan humblebrag tote bag keytar YOLO art party. Semiotics cliche schlitz shaman, waistcoat chartreuse activated charcoal XOXO post-ironic helvetica messenger bag air plant vape sartorial. Typewriter thundercats direct trade edison bulb lomo la croix trust fund. Tote bag tofu lo-fi blue bottle. Drinking vinegar lyft messenger bag, leggings tofu 90's bitters four loko mustache sriracha pabst shabby chic humblebrag glossier. Meh skateboard yuccie tattooed adaptogen gastropub post-ironic put a bird on it green juice la croix hot chicken ennui cray dreamcatcher neutra. Chia semiotics art party fixie shaman echo park palo santo flexitarian. Letterpress retro chillwave, williamsburg palo santo fashion axe raclette lumbersexual keytar yr plaid ugh. Godard everyday carry twee, roof party affogato williamsburg photo booth. Irony lumbersexual letterpress, trust fund raclette wayfarers art party. Flannel bushwick yr tattooed."
+    
+    const result = loremIpsum.split(/\s+/).slice(0,numWords).join(" ");
+    return result;
+  
+  }
+  
   function createEl(htmlString, attrs, ...children) {
     if (typeof htmlString !== "string") {
       throw Error("Argument 'htmlString' is required and must be a string");
@@ -29,14 +40,85 @@ $(document).ready(function() {
     });
   
     return el;
-  };
+  }
 
-  function createLoremIpsum(numWords = 50) {
-    const loremIpsum = "Lorem ipsum dolor amet tousled brooklyn meditation, polaroid offal kale chips raw denim tumblr succulents jianbing listicle. Man braid godard VHS freegan bespoke fixie XOXO ramps lo-fi edison bulb prism gochujang photo booth. Messenger bag bicycle rights trust fund franzen street art mixtape helvetica, sriracha dreamcatcher live-edge microdosing. Whatever cliche neutra iceland chambray, beard narwhal pop-up health goth readymade palo santo forage live-edge 3 wolf moon echo park edison bulb, viral iceland bicycle rights post-ironic celiac typewriter kinfolk mumblecore tilde palo santo. Dreamcatcher cred cliche, keffiyeh intelligentsia forage vice locavore aesthetic yr. Vexillologist shabby chic fixie, air plant helvetica health goth kickstarter four loko jean shorts tote bag green juice street art beard farm-to-table. Enamel pin jianbing photo booth, YOLO pour-over bushwick next level fingerstache vice retro disrupt cloud bread. Gastropub umami distillery chia food truck adaptogen. Forage hexagon helvetica kogi squid. Crucifix health goth bespoke typewriter fam hexagon helvetica, vice dreamcatcher chillwave tumeric. Keffiyeh aesthetic XOXO venmo live-edge kale chips mlkshk wolf williamsburg hella yr locavore. Tumblr unicorn chillwave, edison bulb occupy offal sartorial gastropub kickstarter. Bitters swag chartreuse single-origin coffee PBR&B post-ironic migas activated charcoal before they sold out iPhone seitan lumbersexual tofu tumeric selvage. Shoreditch hashtag literally, af intelligentsia crucifix sustainable +1 chambray adaptogen. Crucifix retro fixie knausgaard. Photo booth asymmetrical seitan, pug marfa tattooed roof party tacos gochujang woke kale chips vice organic. Street art mumblecore trust fund, normcore single-origin coffee meggings neutra tacos fam. Woke chia asymmetrical try-hard cloud bread hexagon leggings kogi taiyaki. Seitan humblebrag tote bag keytar YOLO art party. Semiotics cliche schlitz shaman, waistcoat chartreuse activated charcoal XOXO post-ironic helvetica messenger bag air plant vape sartorial. Typewriter thundercats direct trade edison bulb lomo la croix trust fund. Tote bag tofu lo-fi blue bottle. Drinking vinegar lyft messenger bag, leggings tofu 90's bitters four loko mustache sriracha pabst shabby chic humblebrag glossier. Meh skateboard yuccie tattooed adaptogen gastropub post-ironic put a bird on it green juice la croix hot chicken ennui cray dreamcatcher neutra. Chia semiotics art party fixie shaman echo park palo santo flexitarian. Letterpress retro chillwave, williamsburg palo santo fashion axe raclette lumbersexual keytar yr plaid ugh. Godard everyday carry twee, roof party affogato williamsburg photo booth. Irony lumbersexual letterpress, trust fund raclette wayfarers art party. Flannel bushwick yr tattooed."
-    
-    const result = loremIpsum.split(/\s+/).slice(0,numWords).join(" ");
+  // First image is hard coded in index.html
+  const carouselSlides = [
+    {
+      title: "We travel all over the US",
+      subtitle: "Check out our schedule!",
+      img: "./assets/img/food-table.jpg",
+      btnText: "View Schedule",
+      btnUrl: "schedule.html"
+    },
+    {
+      title: "Our food is seriously the bomb!",
+      subtitle: "What are you waiting for?",
+      img: "./assets/img/grill.jpg",
+      btnText: "Purchase Tickets",
+      btnUrl: "tickets.html"
+    },
+  ]
+
+  function dateConverter(UNIX_timestamp){
+    const a = new Date(UNIX_timestamp);
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const year = a.getFullYear();
+    const month = months[a.getMonth()];
+    const date = a.getDate();
+    const result =  month + ' ' + date + ', ' + year 
     return result;
-  };
+  }
+
+  if (window.location.href.indexOf("index") > -1) {
+
+    carouselSlides.forEach((slide, i) => {
+      $('.carousel-inner').append(`
+    <div class="carousel-item fullscreen-carousel" style="background-image: url('${slide.img}')">
+      <div class="d-flex h-100 align-items-center justify-content-center carousel-caption">
+          <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <h2 class="display-4 mb-2">${slide.title}</h2>
+            </div>
+            <div class="row align-items-center justify-content-center"> 
+              <h3>${slide.subtitle}</h3>
+            </div>
+            <div class=" mt-4 row align-items-center justify-content-center"> 
+              <a class="btn btn-primary" href="${slide.btnUrl}">
+                  ${slide.btnText}
+              </a>
+            </div>
+          </div>
+      </div>
+    </div>`)
+    })
+  }
+
+  if (window.location.href.indexOf("event") > -1) {
+    const currentEvent = JSON.parse(localStorage.getItem("currentEvent")) || {
+        title: "Title Placeholder",
+        subtitle: "",
+        description: ""
+    };
+
+    const pageEl = document.querySelector("#page");
+    
+    const containerEl = createEl("div", {class: "container"},
+      createEl("div", {class: "card mb-3"}, 
+        createEl("img", {class: "card-img-top", src: currentEvent.image || "https://via.placeholder.com/350x150"}),
+        createEl("div", {class: "card-body"}, 
+          createEl("h1", {class: "card-title"}, currentEvent.title || ""),
+          createEl("h2", {class: "text-muted"}, currentEvent.subtitle || ""),
+          createEl("p", {class: "card-text mt-3"}, currentEvent.description || createLoremIpsum(100)),
+          createEl("a", {class: "btn btn-primary", href: "tickets.html"}, "Buy Tickets")
+        )
+      ),
+      
+    )
+    
+
+    pageEl.appendChild(containerEl)
+  }
 
   if (window.location.href.indexOf("schedule") > -1) {
 
@@ -158,41 +240,6 @@ $(document).ready(function() {
     pageEl.appendChild(containerEl3);
   }
 
-  if (window.location.href.indexOf("event") > -1) {
-    const currentEvent = JSON.parse(localStorage.getItem("currentEvent")) || {
-        title: "Title Placeholder",
-        subtitle: "",
-        description: ""
-    };
-
-    const pageEl = document.querySelector("#page");
-    
-    const containerEl = createEl("div", {class: "container"},
-      createEl("div", {class: "card mb-3"}, 
-        createEl("img", {class: "card-img-top", style: "width: 5px", src: currentEvent.image || "https://via.placeholder.com/350x150"}),
-        createEl("div", {class: "card-body"}, 
-          createEl("h1", {class: "card-title"}, currentEvent.title || ""),
-          createEl("h2", {class: "text-muted"}, currentEvent.subtitle || ""),
-          createEl("p", {class: "card-text mt-3"}, currentEvent.description || createLoremIpsum(100)),
-          createEl("a", {class: "btn btn-primary", href: "tickets.html"}, "Buy Tickets")
-        )
-      ),
-      
-    )
-    pageEl.appendChild(containerEl)
-  }
-
-  dateConverter = function(UNIX_timestamp) {
-    const a = new Date(UNIX_timestamp);
-    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const year = a.getFullYear();
-    const month = months[a.getMonth()];
-    const date = a.getDate();
-    const result =  month + ' ' + date + ', ' + year 
-    return result;
-  };
-
-  if (window.location.href.indexOf("tickets") > -1) {
 
     const purchaseBtn = document.getElementById("purchaseBtn");
     const purchaseEmail = document.getElementById("purchaseEmail");
@@ -200,6 +247,7 @@ $(document).ready(function() {
     const modalBodyEl = document.querySelector(".modal-body");
     const modalFooterEl = document.querySelector(".modal-footer");
 
+  if (window.location.href.indexOf("tickets") > -1) {
 
     function purchaseTicket () {
 
@@ -215,42 +263,5 @@ $(document).ready(function() {
     }
     purchaseBtn.addEventListener("click", purchaseTicket);
   }
-  // First image is hard coded in index.html
-  const carouselSlides = [
-    {
-      title: "We travel all over the US",
-      subtitle: "Check out our schedule!",
-      img: "./assets/img/food-table.jpg",
-      btnText: "View Schedule",
-      btnUrl: "schedule.html"
-    },
-    {
-      title: "Our food is seriously the bomb!",
-      subtitle: "What are you waiting for?",
-      img: "./assets/img/grill.jpg",
-      btnText: "Purchase Tickets",
-      btnUrl: "tickets.html"
-    },
-  ]
 
-  carouselSlides.forEach((slide, i) => {
-    $('.carousel-inner').append(`
-  <div class="carousel-item fullscreen-carousel" style="background-image: url('${slide.img}')">
-    <div class="d-flex h-100 align-items-center justify-content-center carousel-caption">
-        <div class="container">
-          <div class="row align-items-center justify-content-center">
-              <h2 class="display-4 mb-2">${slide.title}</h2>
-          </div>
-          <div class="row align-items-center justify-content-center"> 
-            <h3>${slide.subtitle}</h3>
-          </div>
-          <div class=" mt-4 row align-items-center justify-content-center"> 
-            <a class="btn btn-primary" href="${slide.btnUrl}">
-                ${slide.btnText}
-            </a>
-          </div>
-        </div>
-    </div>
-  </div>`)
-  })
 });
