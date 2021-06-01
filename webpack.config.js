@@ -4,10 +4,15 @@ const path = require("path");
 
 
 module.exports = {
-    entry: './assets/js/script.js',
+    entry: {
+        app: "./assets/js/script.js",
+        events: "./assets/js/events.js",
+        schedule: "./assets/js/schedule.js",
+        tickets: "./assets/js/tickets.js"
+    },
     output: {
         path: path.join(__dirname + '/dist'),
-        filename: 'main.bundle.js'
+        filename: '[name].bundle.js'
     },
     plugins: [
         new webpack.ProvidePlugin({
